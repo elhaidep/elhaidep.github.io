@@ -1,0 +1,33 @@
+<script type="text/javascript">
+  function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
+
+  var embed = getParameterByName('r');
+
+  if (embed) {
+    var iframe = document.createElement('iframe');
+    iframe.className = 'custom-iframe';
+    iframe.frameBorder = '0';
+    iframe.allow = 'autoplay; encrypted-media';
+    iframe.sandbox = 'allow-same-origin allow-top-navigation allow-forms allow-scripts';
+    iframe.allowFullscreen = true;
+    iframe.src = atob(embed);
+    document.body.appendChild(iframe);
+  }
+</script>
+
+<style>
+.custom-iframe {
+  position: fixed;
+  top: 100px; /* Altura superior a recortar */
+  left: 0;
+  right: 0;
+  bottom: 50px; /* Espacio adicional en la parte inferior */
+  width: 100%;
+  height: auto;
+}
+</style>
