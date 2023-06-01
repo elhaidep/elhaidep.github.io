@@ -56,7 +56,12 @@
 
 <center><strong>Reproductor</strong></center>
 
-<div class="embed-responsive embed-responsive-16by9">
+<div style="overflow: hidden; padding-bottom: 56.25%; position: relative;  top: -50px; /* Altura superior a recortar */
+  left: 0;
+  right: 0;
+  bottom: 50px; /* Espacio adicional en la parte inferior */
+  width: 100%;
+  height: auto;"> 
 <script type="text/javascript">
   function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -68,7 +73,7 @@
   var embed = getParameterByName('r');
 
   if (embed) {
-    document.write('<iframe class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media" sandbox="allow-same-origin allow-top-navigation allow-forms allow-scripts" allowfullscreen src="'+atob(embed)+'" scrolling="no" frameBorder="0" allowfullscreen></iframe>');
+    document.write('<iframe class="embed-responsive-item"width="100%" frameborder="0" allow="autoplay; encrypted-media" sandbox="allow-same-origin allow-top-navigation allow-forms allow-scripts" allowfullscreen src="'+atob(embed)+'" scrolling="no" frameBorder="0" allowfullscreen></iframe>');
   }
 </script></div>
 </div>
