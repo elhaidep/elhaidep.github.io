@@ -59,7 +59,7 @@
                            <p>
                            <ul class="list-group star-titulo">
                               <li class="list-group-item d-flex align-items-center t-l">
-                                 <p class="m-auto">Eventos - Martes 29 de Agosto de 2023</p>
+                                 <p class="m-auto">Agenda deportiva - <span id="fecha"></span></p>
                               </li>
                            </ul>
                            <div class="centerr"><iframe loading="lazy" src="https://viperplay/agenda/" title="agenda" class="agenda-frame"></iframe></div>
@@ -248,6 +248,16 @@
                   <p class="nav d-block fs-sm mb-0"><span class="text-light opacity-60">© All rights reserved. Desarrollo por </span>Futbol libre What the fuck</p>
                </div>
             </footer>
+               <script>
+    function mostrarFechaActualizada() {
+      var fechaElemento = document.getElementById("fecha");
+      var fechaActual = new Date();
+      fechaElemento.textContent = fechaActual.toLocaleDateString("es-ES", { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+    }
+
+    setInterval(mostrarFechaActualizada, 100);
+  </script>
+
             <br/><br/>
             <nav class="mobile-bottom-nav">
                <div class="mobile-bottom-nav__item"><a href="/" style="text-decoration:none;color:unset" class="mobile-bottom-nav__item-content"><i class="bx bx-home fs-4 lh-1 me-1 l-3"></i>Inicio</a></div>
